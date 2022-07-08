@@ -1,0 +1,172 @@
+<div class="container mt-3 mb-4">
+
+    <div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h1 style="background-color: #c0c0c085 ;color: black	; ">Candidatures</h1>
+                <form class="form-search">
+                    <input type="search" name="search" [(ngModel)]="searchText" placeholder="search  for..">
+                </form>
+                <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                    <table class="table manage-candidates-top mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="color: black;">Full Name</th>
+                                <th class="text-center" style="color: black;">Email</th>
+                                <th class="text-center" style="color: black;">Offre</th>
+                                <th class="text-center" style="color: black;">Curriculum Vitae</th>
+                                <th class="text-center" style="color: black;">Cover Lettre</th>
+                                <th class="action text-right" style="color: black;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="candidates-list" *ngFor="let item of dataArray| filter:searchText;index as i">
+
+                                <td class="candidate-list-favourite-time text-center">
+
+                                    <span class="candidate-list-time order-1">{{item.fullName}}</span>
+                                </td>
+                                <td class="candidate-list-favourite-time text-center">
+
+                                    <span class="candidate-list-time order-1" style="color: blue;">{{item.email}}</span>
+                                </td>
+                                <td class="candidate-list-favourite-time text-center">
+
+                                    <span class="candidate-list-time order-1">{{item.offre}}</span>
+                                </td>
+                                <td class="candidate-list-favourite-time text-center" >
+                                
+                                    <span class="candidate-list-time order-1"  >
+                                        <div class=" text-secondary">
+                                            <button class="y" data-toggle="modal" data-target="#exampleModal1">  
+                                                <i  class="fas fa-file-pdf" ></i>
+                                                Download CV 
+                                            </button>
+                                        </div>
+                                    </span>
+                                </td>
+                                <td class="candidate-list-favourite-time text-center">
+                                
+                                    <span class="candidate-list-time order-1">
+                                        <div class=" text-secondary">
+                                            <button class="y" data-toggle="modal" data-target="#exampleModal2">
+                                                <i class="fas fa-file-pdf"></i>
+                                                Download LM
+                                            </button>
+                                        </div>
+                                    </span>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                                        <li><i class="fas fa-info"></i></li>
+                                        
+                                        <li><a class="text-info"
+                                                
+                                                data-toggle="modal" data-target="#exampleModal"><i
+                                                    class="fa fa-envelope"></i></a></li>
+                                        <li><a class="text-danger" ><i
+                                                    class="far fa-trash-alt" (click)="delete(item.id,i)"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal1"  data-backdrop="static" aria-labelledby="exampleModalLabel"
+   >
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Circulum Vate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ExternalFiles" >
+                    <iframe src="/assets/cha3/Jendoubi aymen CV.pdf" width="465px" height="700" ></iframe>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" data-backdrop="static" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cover Lettre</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ExternalFiles">
+                    <iframe src="/assets/cha3/lettre de motivation jendoubi aymen.pdf" width="465px" height="700"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #c0c0c085 ;color: black;text-align: center; ">
+                <h5 class="modal-title" id="exampleModalLabel" >Send Mail</h5>
+
+            </div>
+            <div class="modal-body">
+            <div >
+                <div class="col-md-7 col-lg-8 m-15px-tb">
+                    <div class="contact-form">
+                        <form  #f="ngForm" (ngSubmit)="interview(f)">
+                            <div class="returnmessage valid-feedback p-15px-b"
+                                data-success="Your message has been received, We will contact you soon."></div>
+                            <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input id="email" type="text" placeholder="Email Address" class="form-control"  value="tunisianddevelopper64@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input id="subject" type="text" placeholder="Subject" class="form-control" value="technical interview">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea id="message" placeholder="Message" class="form-control" rows="3" required name="message" #message="ngModel" ngModel></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send"  >
+                                        <button type="submit" id="send_message" class="px-btn theme" [disabled]="f.invalid" ><span>Send Mail</span> <i
+                                                class="arrow" ></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+
+        </div>
+    </div>
+</div>

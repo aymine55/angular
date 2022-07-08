@@ -1,0 +1,81 @@
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+    integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+
+<div class="job-post-company pt-30 pb-120" *ngIf="data">
+    <div class="container">
+        <div class="row justify-content-between">
+            <!-- Left Content -->
+            <div class="col-xl-7 col-lg-8">
+                <!-- job single -->
+                <div class="single-job-items mb-50">
+                    <div class="job-items">
+                        <div class="job-tittle">            
+                            <ul>
+                                <li></li>
+                                <li style="color: white;">{{data.title}}</li>
+                                <li style="color: white;"><i class="zmdi zmdi-money mr-2" style="color: white;"></i>{{data.salary}}</li>
+                                <li style="color: white;">
+                                    <i class="zmdi zmdi-time mr-2" style="color: white;"></i> {{data.nature}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- job single End -->
+
+                <div class="job-post-details">
+                    <div class="post-details1 mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4 style="color: #4e63d7;">Job Description</h4>
+                        </div>
+                        <p>{{data.description}}</p>
+                    </div>
+                    <div class="post-details2  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4 style="color: #4e63d7;">Required Knowledge, Skills, and Abilities</h4>
+                        </div>
+                        <ul>
+                            <li>{{data.skill1}}</li>
+                            <li>{{data.skill2}}</li>
+                            <li>{{data.skill3}}</li>
+                        </ul>
+                    </div>
+                    <div class="post-details2  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4 style="color: #4e63d7;">Education + Experience</h4>
+                        </div>
+                        <ul>
+                            <li>{{data.education}}</li>
+                            <li>{{data.experience}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Right Content -->
+            <div class="col-xl-4 col-lg-4">
+                <div class="post-details3  mb-50">
+                    <!-- Small Section Tittle -->
+                    <div class="small-section-tittle">
+                        <h4 style="color: #4e63d7;" >Job Overview</h4>
+                    </div>
+                    <ul>
+                        <li>Posted date : <span>{{data.createdAT|date:'fullDate'}}</span></li>
+                        <li>Location : <span>{{data.location}}</span></li>
+                        <li>Job nature : <span>{{data.nature}}</span></li>
+                        <li>Salary : <span>{{data.salary}}</span></li>
+                    </ul>
+                    <div class="apply-btn2">
+                        <a routerLink="/apply"  class="x" style="color: white;">Apply Now</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

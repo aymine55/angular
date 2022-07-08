@@ -1,0 +1,66 @@
+<div class="container mt-3 mb-4" >
+    <form #f="ngForm" (ngSubmit)="add(f)" >
+        <h1 style="background-color: #c0c0c085 ;color: black;">Add Offer</h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4" style="color: black">Title <em>*</em> :</label>
+                <input type="text" class="form-control" required name="title" #title="ngModel" ngModel>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4" style="color: black;" >Category <em>*</em> :</label>
+                <input type="text" class="form-control" required name="departement" #departement="ngModel" ngModel>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" style="color: black;">Description <em>*</em> :</label>
+            <textarea class="form-control" rows="3" required name="description" #description="ngModel" ngModel></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputCity" style="color: black">Location <em>*</em> :</label>
+                <input type="text" class="form-control" required name="location" #location="ngModel" ngModel>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState" style="color: black">Job nature <em>*</em> :</label>
+                <input type="text" class="form-control" required name="nature" #nature="ngModel" ngModel>
+    
+            </div>
+    
+            <div class="form-group col-md-4">
+                <label for="inputZip" style="color: black">Salary <em>*</em> :</label>
+                <input type="text" class="form-control" required name="salary" #salary="ngModel" ngModel>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEd" style="color: black">Education <em>*</em> :</label>
+                <input type="text" class="form-control" required name="education" #education="ngModel" ngModel>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputexp" style="color: black">Experience <em>*</em> :</label>
+                <input type="text" class="form-control" required name="experience" #experience="ngModel" ngModel>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="input1" style="color: black">Skill 1 :</label>
+                <input type="text" class="form-control" name="skill1" #skill1="ngModel" ngModel>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="input2" style="color: black;">Skill 2 :</label>
+                <input type="text" class="form-control" name="skill2" #skill2="ngModel" ngModel>
+    
+            </div>
+    
+            <div class="form-group col-md-4">
+                <label for="input3" style="color: black;">Skill 3 :</label>
+                <input type="text" class="form-control" name="skill3" #skill3="ngModel" ngModel>
+            </div>
+        </div>
+    <div class="text-center">
+                <button  type="submit" [disabled]="f.invalid"> Add </button>
+
+    </div>
+        </form>
+
+</div>

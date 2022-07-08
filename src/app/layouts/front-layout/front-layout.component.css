@@ -1,0 +1,10 @@
+.multicolortext {
+    background-image: linear-gradient(to left, violet, indigo, green, blue, rgb(0, 68, 255), rgb(255, 0, 98), red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}

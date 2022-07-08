@@ -1,0 +1,68 @@
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+    integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+
+<div class="container">
+
+    <br><br>
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="career-search mb-60">
+
+                <form  class="career-form ">
+                    <div >
+                        <div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Enter Your Keywords" id="keywords">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </form>
+                <br>
+
+                <div class="filter-result">
+
+                    <div class="job-box d-md-flex align-items-center justify-content-between mb-30"
+                        *ngFor="let item of dataArray">
+                        <div class=" job-left my-4 d-md-flex align-items-center flex-wrap">
+                            <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+                                ETC
+                            </div>
+                            <div class="job-content">
+                                <h5 class="text-center text-md-left">{{item.title}}</h5>
+                                <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-pin mr-2"></i> {{item.location}}
+                                    </li>
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-money mr-2"></i> 2500-3500
+                                    </li>
+                                    <li class="mr-md-4">
+                                        <i class="zmdi zmdi-time mr-2"></i> {{item.nature}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="job-right my-4 flex-shrink-0">
+                            <a class="x" (click)="details(item.id)" style="color: white;">Apply now</a>
+                            <br><br> 
+                            <span>{{item.createdAT|date:'fullDate'}}</span>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- START Pagination -->
+
+            <!-- END Pagination -->
+        </div>
+    </div>
+
+</div>

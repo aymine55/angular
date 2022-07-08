@@ -1,0 +1,61 @@
+<body>
+    <div class="col-md-6 offset-md-3 mt-5">
+
+
+        <h1 style="background-color:#4e63d7;color:white;">Apply for job : {{title}}</h1>
+        <form #f="ngForm" (ngSubmit)="add(f)">
+            <div class="form-group">
+                <label for="exampleInputName" style="color: #4e63d7;">Full Name</label>
+                <input type="text" name="fullname" class="form-control" id="exampleInputName"
+                    placeholder="Enter your name and surname" required name="fullName" #fullName="ngModel" ngModel  [(ngModel)]="fullnam">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" required style="color: #4e63d7;">Email address</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter your email address" required name="email" #email="ngModel" ngModel [(ngModel)]="mail">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity" style="color: #4e63d7;">City</label>
+                    <input type="text" required name="adress" #adress="ngModel" ngModel class="form-control"
+                        id="inputCity" placeholder="Istanbul" [(ngModel)]="adr">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip" style="color: #4e63d7;">Age</label>
+                    <input type="number" required name="age" #age="ngModel" ngModel [(ngModel)]="old" class="form-control" id="inputZip">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="example-tel-input" style="color: #4e63d7;">Telephone</label>
+                <div>
+                    <input class="form-control" required name="phone" #phone="ngModel" ngModel type="number"
+                        id="example-tel-input" [(ngModel)]="tel">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputOccupation" style="color: #4e63d7;">Occupation</label>
+                <input type="text" name="occupation" class="form-control" id="exampleInputOccupation"
+                    placeholder="Enter your Occupation" [(ngModel)]="occ">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputExperience" style="color: #4e63d7;">Experience</label>
+                <input type="text" name="experience" class="form-control" id="exampleInputExperience"
+                    placeholder="Enter your Occupation" [(ngModel)]="exp">
+            </div>
+            <div class="form-group mt-3">
+                <label class="mr-4" style="color: #4e63d7;">Upload your CV:</label>
+                <input type="file" required name="cv" #cv="ngModel" ngModel [(ngModel)]="c">
+            </div>
+            <div class="form-group mt-3">
+                <label class="mr-4" style="color: #4e63d7;">Upload your LM:</label>
+                <input  type="file" required name="lettre" #lettre="ngModel" ngModel [(ngModel)]="l">
+            </div>
+            <div class="text-center">
+                <button  [disabled]="f.invalid">Apply</button>
+            </div>
+
+        </form>
+    </div>
+</body>

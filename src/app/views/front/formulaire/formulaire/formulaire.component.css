@@ -1,0 +1,32 @@
+h1 {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+    padding: 14px 20px; 
+    background-color:#4e63d7;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    color:#000;
+    font-weight: bold;
+    border-radius: 7em;
+}
+
+img {
+height: 40px;}
+button {
+  color: #FFF;
+padding: 19px 39px 18px 39px;
+  background-color: #4e63d7	;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 60%;
+  border: 1px solid #4e63d7	;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+  
+}
